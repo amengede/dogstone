@@ -2,4 +2,4 @@
 ## An exciting project
 
 ### Modules:
-* [GUI](GUI/GUI.md)
+* [GUI](documentation/GUI/GUI.md)
