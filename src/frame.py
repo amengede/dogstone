@@ -6,6 +6,7 @@ class Frame:
         A GUI element which can hold other elements.
         Essentially a colored rectangle.
     """
+    __slots__ = ("_center", "_size", "_bg_color")
 
 
     def __init__(self, center: Sequence[float], size: Sequence[float], bg_color: Sequence[float]):

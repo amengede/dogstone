@@ -48,7 +48,6 @@ A label, bar and handle. The handle is normalized between 0 and 1. Bar's positio
 * bg_color: np.Array(r,g,b)
 * handle_color: np.Array(r,g,b)
 * highlight_color: np.Array(r,g,b)
-* text: String
 * fg_color: np.Array(r,g,b)
 
 #### class functions:

@@ -5,6 +5,9 @@ class Button:
     """
         A GUI element which can hold text and be pressed.
     """
+    __slots__ = (
+        "_center", "_size", "_bg_color", "_text", "_fg_color", "_highlight_color"
+    )
 
 
     def __init__(
