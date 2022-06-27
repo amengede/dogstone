@@ -6,13 +6,13 @@ class Button:
         A GUI element which can hold text and be pressed.
     """
     __slots__ = (
-        "_center", "_size", "_bg_color", "_text", "_fg_color", "_highlight_color"
+        "_center", "_size", "_bg_color", "_text", "_fg_color", "_highlight_color", "_command"
     )
 
 
     def __init__(
         self, center: Sequence[float], size: Sequence[float], bg_color: Sequence[float],
-        text: str, fg_color: Sequence[float], highlight_color: Sequence[float]
+        text: str, fg_color: Sequence[float], highlight_color: Sequence[float], command: int
     ):
         """
             Constructs a new button
@@ -26,6 +26,7 @@ class Button:
                 fg_color: the (r,g,b) color of the text
                 highlight_color: the (r,g,b) color of the button
                 when active (eg. has mouse focus)
+                command: the signal to return on click
         """
         
         self._center = np.array(center, dtype=np.float32)
@@ -34,6 +35,7 @@ class Button:
         self._text = text
         self._fg_color = np.array(fg_color, dtype=np.float32)
         self._highlight_color = np.array(highlight_color, dtype=np.float32)
+        self._command = command
     
     def set_center(self, new_center: Sequence[float])->None:
         """
@@ -190,6 +192,32 @@ class Button:
         """
 
         return self._highlight_color
+    
+    def get_command(self) -> int:
+        """
+            Get the command code for the button.
+
+            Returns:
+
+                int: The return action for the button. Defined in return_actions (config.py)
+        """
+
+        return self._command
+    
+    def set_command(self, new_command) -> None:
+        """
+            Set the command code for the button.
+
+            Parameters:
+
+                new_command: The return action for the button. Defined in return_actions (config.py)
+
+            Returns:
+
+                None
+        """
+
+        self._command = new_command
     
     def inside(self, position: Sequence[float]) -> bool:
         """

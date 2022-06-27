@@ -6,12 +6,12 @@ class Label:
         A GUI element which displays text
     """
     __slots__ = (
-        "_center", "_size", "_text", "_fg_color"
+        "_center", "_start_pos", "_letter_size" "_text", "_fg_color"
     )
 
 
     def __init__(
-        self, center: Sequence[float], size: Sequence[float], fg_color: Sequence[float],
+        self, start_pos: Sequence[float], letter_size: Sequence[float], fg_color: Sequence[float],
         text: str
     ):
         """
@@ -19,42 +19,42 @@ class Label:
 
             Parameters:
 
-                center: the (x,y) center of the button
-                size: the (w,h) size of the button
+                stat_pos: the start position of the text, text runs left to right.
+                letter_size: the (w,h) size of each letter
                 text: the text on the button
                 fg_color: the (r,g,b) color of the text
         """
         
-        self._center = np.array(center, dtype=np.float32)
-        self._size = np.array(size, dtype=np.float32)
+        self._start_pos = np.array(start_pos, dtype=np.float32)
+        self._letter_size = np.array(letter_size, dtype=np.float32)
         self._text = text
         self._fg_color = np.array(fg_color, dtype=np.float32)
     
-    def set_center(self, new_center: Sequence[float])->None:
+    def set_start_pos(self, new_start: Sequence[float])->None:
         """
-            Change the center of the label
+            Change the start position of the label
 
             Parameters:
 
-                new_center: the new center
+                new_start: the new start position
             
             Returns:
 
                 None
         """
 
-        self._center = np.array(new_center, dtype=np.float32)
+        self._start_pos = np.array(new_start, dtype=np.float32)
     
-    def get_center(self)->np.array:
+    def get_start_pos(self)->np.array:
         """
-            Get the center of the label
+            Get the start position of the label
             
             Returns:
 
-                np.array: a reference to the label's center (note: not a fresh copy!)
+                np.array: a reference to the label's start position (note: not a fresh copy!)
         """
 
-        return self._center
+        return self._start_pos
 
     def set_size(self, new_size: Sequence[float])->None:
         """
