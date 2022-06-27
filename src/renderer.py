@@ -5,14 +5,9 @@ class renderer:
     """
 
 
-    def __init__(self, width: int, height: int):
+    def __init__(self):
         """
             Creates a renderer, which can then be passed commands.
-
-            Parameters:
-
-                width: the width of the window
-                height: the height of the window
         """
 
         pass

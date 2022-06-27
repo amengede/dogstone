@@ -29,8 +29,8 @@ class Button:
                 command: the signal to return on click
         """
         
-        self._center = np.array(center, dtype=np.float32)
-        self._size = np.array(size, dtype=np.float32)
+        self._center = np.array(center + (0,), dtype=np.float32)
+        self._size = np.array(size + (0,), dtype=np.float32)
         self._bg_color = np.array(bg_color, dtype=np.float32)
         self._text = text
         self._fg_color = np.array(fg_color, dtype=np.float32)

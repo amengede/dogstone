@@ -1,6 +1,7 @@
 from typing import Sequence
 from config import *
 import controller
+import GUI_renderer
 
 class GUIController(controller.Controller):
     """
@@ -17,6 +18,8 @@ class GUIController(controller.Controller):
         self._buttons = []
         self._labels = []
         self._sliders = []
+
+        self._renderer = GUI_renderer.GUIRenderer()
     
     def handle_mouse_click(self, mouse_position: Sequence[float]) -> int:
         """
@@ -35,6 +38,8 @@ class GUIController(controller.Controller):
             if button.inside(mouse_position):
 
                 return button.get_command()
+        
+        return RETURN_ACTION_NONE
     
     def get_widgets(self) -> dict[int,list[object]]:
         """

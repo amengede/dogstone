@@ -5,9 +5,6 @@ class Label:
     """
         A GUI element which displays text
     """
-    __slots__ = (
-        "_center", "_start_pos", "_letter_size" "_text", "_fg_color"
-    )
 
 
     def __init__(
@@ -69,7 +66,7 @@ class Label:
                 None
         """
 
-        self._size = np.array(new_size, dtype=np.float32)
+        self._letter_size = np.array(new_size, dtype=np.float32)
     
     def get_size(self)->np.array:
         """
@@ -80,7 +77,7 @@ class Label:
                 np.array: a reference to the label's size (note: not a fresh copy!)
         """
 
-        return self._size
+        return self._letter_size
      
     def set_text(self, new_text: str)->None:
         """

@@ -1,4 +1,7 @@
 import pygame as pg
+from OpenGL.GL import *
+import pyrr
+import numpy as np
 
 #return_action constants
 RETURN_ACTION_QUIT = 0
@@ -22,3 +25,6 @@ PALETTE_BG = (17.0/255.0, 43.0/255.0, 60.0/255.0)
 PALETTE_BLUE = (32.0/255.0, 83.0/255.0, 117.0/255.0)
 PALETTE_ORANGE = (246.0/255.0, 107.0/255.0, 14.0/255.0)
 PALETTE_LIGHT = (239.0/255.0, 239.0/255.0, 239.0/255.0)
+
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600

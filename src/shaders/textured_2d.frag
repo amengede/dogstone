@@ -3,7 +3,7 @@
 in vec2 fragmentTexCoord;
 
 uniform vec3 objectColor;
-uniform sampler2d material;
+uniform sampler2D material;
 
 out vec4 fragmentColor;
 

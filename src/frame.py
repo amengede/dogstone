@@ -20,8 +20,8 @@ class Frame:
                 bg_color: the (r,g,b) color of the frame
         """
         
-        self._center = np.array(center, dtype=np.float32)
-        self._size = np.array(size, dtype=np.float32)
+        self._center = np.array(center + (0,), dtype=np.float32)
+        self._size = np.array(size + (0,), dtype=np.float32)
         self._bg_color = np.array(bg_color, dtype=np.float32)
     
     def set_center(self, new_center: Sequence[float])->None:

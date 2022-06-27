@@ -22,13 +22,13 @@ class ColoredQuad:
         """
 
         self.vertices = (
-            0, 1,
-            0, 0,
-            1, 0,
+            -1,  1,
+            -1, -1,
+             1, -1,
 
-            0, 1,
-            1, 0,
-            1, 1
+            -1,  1,
+             1, -1,
+             1,  1
         )
 
         self.vertices = np.array(self.vertices, dtype=np.float32)
@@ -38,7 +38,7 @@ class ColoredQuad:
         self.vao = glGenVertexArrays(1)
         glBindVertexArray(self.vao)
         self.vbo = glGenBuffers(1)
-        glBindBuffer(self.vbo)
+        glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
         glBufferData(GL_ARRAY_BUFFER, self.vertices.nbytes, self.vertices, GL_STATIC_DRAW)
 
         glEnableVertexAttribArray(0)
@@ -68,13 +68,13 @@ class TexturedQuad:
         """
 
         self.vertices = (
-            0, 1, 0, 1,
-            0, 0, 0, 0,
-            1, 0, 1, 0,
+            -1,  1, 0, 1,
+            -1, -1, 0, 0,
+             1, -1, 1, 0,
 
-            0, 1, 0, 1,
-            1, 0, 1, 0,
-            1, 1, 1, 1
+            -1,  1, 0, 1,
+             1, -1, 1, 0,
+             1,  1, 1, 1
         )
 
         self.vertices = np.array(self.vertices, dtype=np.float32)
@@ -84,11 +84,13 @@ class TexturedQuad:
         self.vao = glGenVertexArrays(1)
         glBindVertexArray(self.vao)
         self.vbo = glGenBuffers(1)
-        glBindBuffer(self.vbo)
+        glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
         glBufferData(GL_ARRAY_BUFFER, self.vertices.nbytes, self.vertices, GL_STATIC_DRAW)
 
         glEnableVertexAttribArray(0)
         glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 8, ctypes.c_void_p(0))
+        glEnableVertexAttribArray(1)
+        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8, ctypes.c_void_p(0))
     
     def destroy(self) -> None:
         """

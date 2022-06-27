@@ -29,7 +29,7 @@ class MenuController(gui_controller.GUIController):
         self._frames.append(
             frame.Frame(
                 center = (-0.2,0),
-                size = (1.4, 1.8),
+                size = (0.7, 0.9),
                 bg_color = PALETTE_BLUE
             )
         )

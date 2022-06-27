@@ -42,7 +42,7 @@ def main():
         else:
             break
 
-        result = app.mainloop()
+        result = app.main_loop()
     
     app.destroy()
 

@@ -11,5 +11,5 @@ void main() {
     
     gl_Position = model * vec4(vertexPos, 0.0, 1.0);
 
-    fragmentTexCoord = vertexTexCoord;
+    fragmentTexCoord = vec2(vertexTexCoord.x, 1.0 - vertexTexCoord.y);
 }
